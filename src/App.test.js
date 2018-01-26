@@ -5,8 +5,10 @@ import { shallow } from 'enzyme';
 
 describe('App', () => {
   it('should have `th` "Items"', () => {
-    const wrapper = shallow(
-      <App />
-    )
+
+
+    expect(shallow(<App />)
+      .contains(<th>Items</th>))
+      .toBe(true);
   });
 }); 
