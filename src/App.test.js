@@ -4,7 +4,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 describe('App', () => {
-  const wrapper = shallow(<App />);
+  let wrapper;
+  beforeEach(() => {
+    wrapper = shallow(<App />);
+  });
 
   it('should have `button` element', () => {
     expect(wrapper
