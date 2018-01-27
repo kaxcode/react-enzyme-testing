@@ -5,10 +5,14 @@ import { shallow } from 'enzyme';
 
 describe('App', () => {
   it('should have `button` element', () => {
-
-
     expect(shallow(<App />)
-      .containsMatchingElement(<button>Add item</button>))
+      .containsMatchingElement(<button disabled={true}>Add item</button>))
+      .toBe(true);
+  });
+
+  it('should have `input` element', () => {
+    expect(shallow(<App />)
+      .containsMatchingElement(<input />))
       .toBe(true);
   });
 }); 
