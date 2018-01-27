@@ -4,11 +4,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 describe('App', () => {
-  it('should have `th` "Items"', () => {
+  it('should have `button` element', () => {
 
 
     expect(shallow(<App />)
-      .contains(<th>Items</th>))
+      .containsMatchingElement(<button>Add item</button>))
       .toBe(true);
   });
 }); 
