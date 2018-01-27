@@ -6,7 +6,14 @@ import { shallow } from 'enzyme';
 describe('App', () => {
   it('should have `button` element', () => {
     expect(shallow(<App />)
-      .containsMatchingElement(<button disabled={true}>Add item</button>))
+      .containsMatchingElement(<button>Add item</button>))
+      .toBe(true);
+  });
+
+  it('`button` should be disabled', () => {
+    const wrapper = shallow(<App />);
+    const button = wrapper.find('button').first();
+    expect(button.props().disabled)
       .toBe(true);
   });
 
