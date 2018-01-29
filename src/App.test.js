@@ -96,6 +96,12 @@ describe('App', () => {
         expect(wrapper.containsMatchingElement(<td>{item}</td>))
         .toBe(true);
       });
+
+      it('should clear the input field', () => {
+        const input = wrapper.find('input').first();
+        expect(input.props().value)
+          .toEqual('');
+      });
     });
   });
 });
