@@ -5,6 +5,7 @@ import { shallow } from 'enzyme';
 
 describe('App', () => {
   let wrapper;
+
   beforeEach(() => {
     wrapper = shallow(<App />);
   });
@@ -25,5 +26,16 @@ describe('App', () => {
     expect(wrapper
       .containsMatchingElement(<input />))
       .toBe(true);
+  });
+
+  describe('the user populates the input', () => {
+    const item = 'Vancouver';
+
+    beforeEach(() => {
+      const input = wrapper.find('input').first();
+      input.simulate('change', {
+        target: { value: item }
+      })
+    });
   });
 }); 
