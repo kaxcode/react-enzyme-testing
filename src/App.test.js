@@ -91,6 +91,11 @@ describe('App', () => {
         expect(wrapper.state().items)
         .toContain(item);
       });
+
+      it('should render the item in the table', () => {
+        expect(wrapper.containsMatchingElement(<td>{item}</td>))
+        .toBe(true);
+      });
     });
   });
 });
